@@ -1,0 +1,342 @@
+
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    background: #1c1c1c;
+}
+
+section{
+    position: relative;
+    background: #030303;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+        transform: translateY(-360px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.waveShapeBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.waveShapeBottom svg {
+    position: relative;
+    display: block;
+    width: calc(101% + 1.3px);
+    height: 178px;
+}
+
+.waveShapeBottom,.waveShapeBottom2,.waveShapeOPTop,.waveShapeTop .shape-fill {
+    fill: #00B7FF;
+}
+
+.waveShapeTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.waveShapeTop svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 57px;
+}
+
+.waveShapeBottom2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.waveShapeBottom2 svg {
+    position: relative;
+    display: block;
+    width: calc(129% + 1.3px);
+    height: 52px;
+}
+
+.waveShapeOPTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.waveShapeOPTop svg {
+    position: relative;
+    display: block;
+    width: calc(162% + 1.3px);
+    height: 46px;
+}
+
+.title h4{
+    font-family: 'Montage', sans-serif;
+    font-weight: bold;
+    letter-spacing: 10px;
+    font-size: 25px;
+    
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+
+    animation: fade 3s forwards ;
+
+}
+
+.container .card{
+    position: relative;
+    width: 30%;
+    height: 30%;
+    box-shadow: 10px 20px 50px rgba(0,0,0,0.5);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid #00b7ffb2;
+    border-right: 1px solid #00b7ff79;
+    border-left: 1px solid #00b7ffb2;
+    border-left: 1px solid #00b7ff79;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:nth-child(1){
+    transform: perspective(190px) rotateX(8deg);
+    
+}
+.card:nth-child(2){
+    transform: perspective(190px) rotateX(2deg);
+   
+}
+.card:nth-child(3){
+    transform: perspective(190px) rotateX(8deg);
+}
+
+
+.container .card:hover{
+    transform: scale(1.1);
+}
+
+@media screen and (max-width:856px){
+
+    .container .card{
+        width: 220px;
+      
+    }
+
+    .card:nth-child(2){
+        transform: perspective(190px) rotateX(8deg);
+        margin: 0;
+    }
+
+    .card:nth-child(1){
+        margin: 0;
+    }
+
+    .card:nth-child(3){
+    }
+
+}
+
+
+
+@media screen and (max-width: 696px){
+   .container .card{
+       height: 380px;
+       margin-bottom: 80px;
+   }
+
+   .container .card:nth-child(1) {
+      
+   }
+}
+
+@media  screen and (max-width: 537px) {
+    .container .card:nth-child(1) {
+        margin-right: 0;
+    }
+
+    .container .card {
+        margin-top: 160px;
+    }
+
+    .container .card:nth-child(2){
+        margin-top: 100px;
+    }
+
+    .container .card:nth-child(3){
+        margin-top: 100px;
+    }
+
+    .waveShapeBottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
+    
+    .waveShapeBottom svg {
+        position: relative;
+        display: block;
+        width: calc(101% + 1.3px);
+        height: 178px;
+    }
+}
+    
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+
+.content a{
+    margin-bottom: 20px;
+}
+
+.content ion-icon {
+    color: #00B7FF;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.content img{
+    width: 110%;
+}
+
+.content span {
+    background: linear-gradient(to right, #00b7ff 0%, #4cdda5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container .card .content{
+    padding: 20px 20px;
+    margin-top: 70px;
+    text-align: center;
+    opacity: 1;
+    transition: 0.5s;
+}
+.container .card .content h2{
+    position: absolute;
+    font-size: 3em;
+    color: rgba(255,255,255,0.5);
+    pointer-events: none;
+    transform: translateY(-290%);
+}
+
+
+.container .card .content h3{
+    font-size: 1.8em;
+    color: #fff;
+    z-index: 1;
+    margin-bottom: 10;
+}
+
+.container .card .content p{
+    font-size: 1em;
+    color: #fff;
+    font-weight: 300;
+}
+
+.container .card .content a{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.container .card .content a:hover{
+    transform: scale(1.15);
+}
+
+.title{
+    width: 100%;
+    position: absolute;
+    top: 10%;
+}
+
+section h4{
+  
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 3rem;
+    position: absolute;
+    color: white;
+    position: 0;
+}
+@media screen and (max-width: 1060px){
+
+    .content h2 {
+        font-size: 20px;
+    }
+
+    section{
+        padding: 10px;
+    }
+
+
+}
